@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Books</h1>
+  <%= link_to "Create today", new_book_path %>
+  <div class="cards">
+    <% @books.each do |book| %>
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <h2><%= book.title %></h2>
+          <p><%= book.summary %></p>
+          <p><%= book.category %></p>
+          <%= link_to "#{book.title}", book_path(book) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
