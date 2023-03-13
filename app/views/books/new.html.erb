@@ -1,6 +1,8 @@
-<%= simple_form_for @book do |f| %>
-  <%= f.input :title %>
-  <%= f.input :summary %>
-  <%= f.input :category %>
-  <%= f.submit %>
-<% end %>
+<div class="container bg-white mt-3 py-3">
+  <%= simple_form_for @book do |f| %>
+    <%= f.input :title, class: "form-control" %>
+    <%= f.input :summary, class: "form-control", label: "Summary" %>
+    <%= f.input :category, class: "form-control" %>
+    <%= f.submit class: "form-control" %>
+  <% end %>
+</div>

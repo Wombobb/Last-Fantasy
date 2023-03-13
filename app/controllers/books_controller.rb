@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!, :only => [:new, :edit]
+  before_action :authenticate_user!, :only => [:new, :edit, :edit, :update]
 
   def index
     @books = Book.all
@@ -7,7 +7,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    @chapters = @book.chapters
+    @chapters = Chapter.where(book_id: @book)
   end
 
   def new

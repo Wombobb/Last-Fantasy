@@ -1,0 +1,9 @@
+<div class="container bg-white mt-3">
+  <h1>kjdfsn</h1>
+  <%= simple_form_for [@book, @chapter] do |f| %>
+    <%= f.input :title, class: "form-control" %>
+    <%= f.input :content, class: "form-control" %>
+    <%= f.input :notice, class: "form-control" %>
+    <%= f.submit class: "form-control" %>
+  <% end %>
+</div>
