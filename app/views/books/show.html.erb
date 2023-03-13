@@ -1,5 +1,18 @@
-<div class="container">
-  <h1><%= @book.title %></h1>
-  <%= @book.summary %>
-  <%= @book.category %>
+<div class="container bg-white mt-3 vh-100">
+  <div class="row" style="height: 400px;">
+    <div class="col-6">
+      <h1><%= @book.title.capitalize %></h1>
+      <%= @book.summary %>
+      <%= @book.category %>
+    </div>
+    <div class="col-6">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="" />
+    </div>
+  </div>
+  <ol class=''>
+    <% @chapters.each do |chapter| %>
+      <li><%= link_to "#{chapter.title}", "#{@book.id}/chapters/#{chapter.id}"%></li>
+    <% end %>
+  </ol>
+  <%= link_to "Add chapter to #{@book.title}", new_book_chapter_path(@book), class: "btn btn-primary" %>
 </div>
